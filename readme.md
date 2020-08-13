@@ -6,5 +6,5 @@
     yarn init(error) npm init
     yarn add webpack webpack-cli webpack-dev-server --dev
     (webpack src/index.js --output dist/test.js --mode none)打包
-    zhaodao
+    
 ```
