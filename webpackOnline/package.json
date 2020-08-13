@@ -11,11 +11,27 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^4.2.1",
     "glob": "^7.1.6",
     "html-webpack-plugin": "^4.3.0",
+    "less": "^3.12.2",
+    "less-loader": "^6.2.0",
+    "post": "^0.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9"
+  },
+  "browserslist":[
+    "last 10 Chrome versions",
+    "last 5 Firefox versions",
+    "Safari >= 6",
+    "ie > 8"
+  ],
+  "dependencies": {
+    "build": "^0.1.4"
   }
 }

@@ -27,20 +27,51 @@ htmlFiles.forEach(function(file,index){
 })
 
 module.exports = {
-    entry:path.resolve(__dirname,'./src/index.js'),
+    // entry:path.resolve(__dirname,'./src/index.js'),
     entry:newEntries,
+    optimization:{
+        splitChunks: {
+            chunks: 'async',
+        },
+        runtimeChunk:{
+            name:'mainfest'
+        }
+    },
     // entry:{//打包成多个文件
     //     index:'./src/index.js',
     //     main:'./src/main.js'
     // },
     // entry:['./src/index.js','./src/main.js'],//打包成一个文件
-    output:{
-        path:DIST_PATH,
-        filename:'[name].[chunkhash:5].js'
-    },
+    // output:{
+    //     path:DIST_PATH,
+    //     filename:'[name].[chunkhash:5].js'
+    // },
     //模块解析
     module:{
-
+        rules:[
+            {
+                test:/\.css$/,
+                exclude:/node_modules/,
+                use:[{loader:'style-loader'},{loader:'css-loader'}]
+            },
+            {
+                test:/\.less$/,
+                exclude:/node_modules/,
+                use:[{loader:'style-loader'},{loader:'css-loader'},{loader:'less-loader'},{loader:'postcss-loader'}]
+            },
+            {   
+                test:/\.(png|jpg|gif)$/,
+                use:[
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name]_[hash].[ext]',
+                            outputPath: 'images/'
+                        }
+                    }
+                ]
+            },
+        ]
     },
     //插件
     plugins:[

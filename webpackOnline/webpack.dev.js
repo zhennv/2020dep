@@ -4,9 +4,13 @@ const {merge} = require('webpack-merge');
 const commomConfig = require('./webpack.common.js');
 const DIST_PATH = path.resolve(__dirname,'./dist');
 
-
-module.exports = merge(commomConfig,{
+const devConfig = {
     mode:'development',
+    output:{
+        path:DIST_PATH,
+        filename:'[name].[hash:5].js',
+        chunkFilename:'[vendors].[hash:5].js'
+    },
     //插件
     plugins:[
         
@@ -14,7 +18,7 @@ module.exports = merge(commomConfig,{
     //开发服务器
     devServer:{
         hot:true,
-        open:true,
+        // open:true,
         contentBase:DIST_PATH,
         host:"0.0.0.0",
         port:8080,
@@ -26,4 +30,6 @@ module.exports = merge(commomConfig,{
         },
         useLocalIp:true,
     }
-})
+}
+
+module.exports = merge(commomConfig,devConfig)
