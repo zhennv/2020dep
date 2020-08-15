@@ -60,13 +60,15 @@ module.exports = {
                 use:[{loader:'style-loader'},{loader:'css-loader'},{loader:'less-loader'},{loader:'postcss-loader'}]
             },
             {   
-                test:/\.(png|jpg|gif)$/,
+                test:/\.(png|jpe?g|gif)$/,
                 use:[
                     {
-                        loader: 'file-loader',
+                        loader: 'url-loader',
                         options: {
                             name: '[name]_[hash].[ext]',
-                            outputPath: 'images/'
+                            limit: 2048,
+                            outputPath: 'images/',
+                            publicPath: '/img'
                         }
                     }
                 ]
