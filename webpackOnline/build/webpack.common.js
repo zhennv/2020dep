@@ -110,5 +110,8 @@ module.exports = {
                 { from: path.resolve(__dirname, '../static'), to: DIST_PATH + '/static' }
             ]
         }),
+        new webpack.DefinePlugin({
+            'scene':JSON.stringify(process.env.scene)
+        })
     ],
 }
