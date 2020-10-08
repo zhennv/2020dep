@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prod": "rm -rf dist && cross-env scene=prod webpack --config ./build/webpack.prod.js --mode production",
+    "prod": "rimraf dist && cross-env scene=prod webpack --config ./build/webpack.prod.js --mode production",
     "dev": "cross-env scene=dev webpack-dev-server --config ./build/webpack.dev.js --mode none"
   },
   "author": "",

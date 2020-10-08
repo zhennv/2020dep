@@ -8,9 +8,9 @@ var terserPlugin = require("terser-webpack-plugin");
 
 var SRC_PATH = path.resolve(__dirname, '../src');
 var newEntries = {};
-var files = glob.sync(SRC_PATH + '/*.js');
+var files = glob.sync(SRC_PATH + '/ejs/*.js');
 files.forEach(function (file, index) {
-    var substr = file.match(/src\/(\S*)\.js/)[1];
+    var substr = file.match(/src\/ejs\/(\S*)\.js/)[1];
     newEntries[substr] = file;
 })
 var CUR_PATH = path.resolve(__dirname, '../');
@@ -112,6 +112,10 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'scene':JSON.stringify(process.env.scene)
+        }),
+        //全局引入url
+        new webpack.ProvidePlugin({
+            commonFun:[path.resolve(SRC_PATH,'js/config.js'),'default']
         })
     ],
 }

@@ -32,7 +32,7 @@ const devConfig = {
         host: "0.0.0.0",
         port: 8080,
         // https:true,//接口是https
-        noInfo: true,
+        noInfo: false,
         historyApiFallback: true,//404页面都连接到index.html,history模式时配置为true可以帮忙找到页面
         proxy: {
             "/api": "http://localhost:3000"
