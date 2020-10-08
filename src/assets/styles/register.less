@@ -1,0 +1,58 @@
+.reg-bottom-bar {
+    text-align: center;
+}
+.text-success {
+    justify-content:space-around;
+    font-size:28px;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.register-box {
+    text-align: left;
+  
+    .agreement {
+        display: block;
+        padding-top: 20px;
+    }
+    button.btn-reg {
+        width: 80%;
+        margin-top: 30px;
+        height: 50px;
+        border-radius: 5px;
+    }
+    .get-sms {
+        border:1px solid rgba(0,0,0,0.2);
+        height:25px;
+        line-height:25px;
+        width: 60px;
+        text-align: center;
+        
+        background:#fff;
+        &.disabled {
+            background: #f2f2f2;
+            color: #999;
+        }
+    }
+    .select-gender {
+        background: #fff;
+        height: auto;
+        overflow: auto;
+        display: flex;
+        justify-content:flex-start;
+        padding: 15px;
+        label {
+            width: 70px;
+            display: block;
+        }
+        .van-radio-group {
+            display: flex;
+            flex-direction: row;
+            .van-radio {
+                margin-right: 10px;
+            }
+        }
+    }
+}
