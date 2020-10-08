@@ -5,6 +5,7 @@
       <el-table-column slot="fixed" fixed prop="date" label="日期" width="150">
       </el-table-column>
     </HelloWorld>
+    <button @click="asyncClick">触发方法</button>
   </div>
 </template>
 <script>
@@ -102,6 +103,7 @@ export default {
     handleNameSort() {
       console.log("handleNameSort");
     },
+    asyncClick() {},
   },
   components: {
     HelloWorld,
