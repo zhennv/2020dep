@@ -6,18 +6,34 @@
 </template>
 
 <script>
+import { mapMutations, mapGetters } from "vuex";
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
   },
+  created() {
+    sessionStorage.setItem("parameters", "111");
+  },
+  computed: {
+    ...mapGetters(["parameters"]),
+  },
   methods: {
+    ...mapMutations(["setParameters"]),
     nodeClick() {
       this.$axios
         .get("/cellphone/existence/check", {
           phone: 17858804744,
         })
         .then((res) => {
+          this.setParameters({ phone: 17858804744 });
+          this.$router.push({
+            name: "grapher",
+            // path: "/photo/grapher",
+            params: {
+              phone: 17858804744,
+            },
+          });
           console.log(res);
         })
         .catch((err) => {

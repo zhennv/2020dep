@@ -18,11 +18,26 @@ export default new Vuex.Store({
       rightIcon: 'icon-icon_return',
       rightClicked: false,
     },
+    parameters: {},//保存页面传参
+  },
+  getters: {
+    parameters: state => {
+      if (JSON.stringify(state.parameters) === "{}") {//parameters是空对象时
+        state.parameters = JSON.parse(sessionStorage.getItem("parameters"))
+      }
+      return state.parameters
+    },
   },
   mutations: {
     updateHeader(state, payload) {
       state.header = { ...state.header, ...payload }
-    }
+    },
+    setParameters: (store, payload) => {//路由跳转时 每次更新本地存储的内容
+      if (payload) {
+        store.parameters = payload;
+        sessionStorage.setItem("parameters", JSON.stringify(payload))
+      }
+    },
   },
   actions: {
     updateHeader({ state, commit }, payload) {

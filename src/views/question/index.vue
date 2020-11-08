@@ -3,7 +3,12 @@
 </template>
 <script>
 export default {
-  data() {},
+  data() {
+    return {};
+  },
+  created() {
+    console.log(this.$route.params);
+  },
 };
 </script>
 <style lang="less">

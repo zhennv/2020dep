@@ -17,6 +17,13 @@ Vue.config.productionTip = false;
 Object.keys(components).forEach(item => {
   Vue.component(item, components[item]);
 })
+router.beforeEach((to, from, next) => {
+  console.log(to);
+  next()
+  // next(vm => {
+  //   console.log(vm);
+  // })
+})
 new Vue({
   router,
   store,
