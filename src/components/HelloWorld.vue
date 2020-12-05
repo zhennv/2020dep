@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <button @click="nodeClick">ceshi</button>
+    <button @click="nodeClick">测试登录接口</button>
   </div>
 </template>
 
@@ -22,8 +22,10 @@ export default {
     ...mapMutations(["setParameters"]),
     nodeClick() {
       this.$axios
-        .get("/cellphone/existence/check", {
-          phone: 17858804744,
+        .get(this.$api.login, {
+          // phone: 17858804744,
+          phone: "17858804744",
+          password: "z17858804744",
         })
         .then((res) => {
           this.setParameters({ phone: 17858804744 });
