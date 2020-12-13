@@ -4,7 +4,7 @@ const SRC_PATH = path.resolve(__dirname, 'src');
 
 const targetUrl = 'http://localhost:3000/'
 module.exports = {
-  // linkOnSave: false,
+  // lintOnSave: false,
   configureWebpack: {
     resolve: {
       alias: {
