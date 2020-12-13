@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button style="margin-top: 100px" @click="handleClick">回到home</button>
+    <button @click="handleClick">回到home</button>
   </div>
 </template>
 <script>

@@ -95,6 +95,9 @@ export default {
     }
   }
 }
+.header {
+  position: relative !important;
+}
 .app-frame-out {
   .content {
     flex: 1;

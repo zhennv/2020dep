@@ -6,7 +6,7 @@ export default [
     component: Home
   },
   {
-    path: '/*',
+    path: '*',
     redirect: {
       name: 'home'
     }
