@@ -1,19 +1,19 @@
 
 
 export default {
-   fileParse(file, type = "base64") {
-      return new Promise(resolve => {
-          let fileRead = new FileReader();
-          if (type === "base64") {
-              fileRead.readAsDataURL(file);
-          } else if (type === "buffer") {
-              fileRead.readAsArrayBuffer(file);
-          }
-          fileRead.onload = (ev) => {
-              resolve(ev.target.result);
-          };
-      });
-},
+  fileParse(file, type = "base64") {
+    return new Promise(resolve => {
+      let fileRead = new FileReader();
+      if (type === "base64") {
+        fileRead.readAsDataURL(file);
+      } else if (type === "buffer") {
+        fileRead.readAsArrayBuffer(file);
+      }
+      fileRead.onload = (ev) => {
+        resolve(ev.target.result);
+      };
+    });
+  },
   isIosAndroid() {
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
@@ -92,8 +92,8 @@ export default {
       }, delay);
     }
   },
-  
-  formatDate (date, formatter) {
+
+  formatDate(date, formatter) {
     const year = date.getFullYear()
     const month = date.getMonth() + 1
     const day = date.getDate()
