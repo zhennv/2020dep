@@ -28,6 +28,7 @@ export default {
           // phone: 17858804744,
           phone: "17858804744",
           password: "z17858804744",
+
         })
         .then((res) => {
           this["base/setParameters"]({ phone: 17858804744 });
