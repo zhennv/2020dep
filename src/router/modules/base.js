@@ -1,9 +1,15 @@
-import Home from '../views/modules/home'
+import Home from '../../views/modules/home/index.vue'
 export default [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: Home
+  },
+  {
+    path: '/*',
+    redirect: {
+      name: 'home'
+    }
   },
   {
     path: '/about',
@@ -11,7 +17,7 @@ export default [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/modules/about/index.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../../views/modules/about/index.vue')
   },
   {
     path: '/photo/grapher',
@@ -19,6 +25,6 @@ export default [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/modules/photo/index.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../../views/modules/photo/index.vue')
   },
 ]

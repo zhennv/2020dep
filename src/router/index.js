@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import base from './router/modules/base'
+import base from './modules/base'
 
 Vue.use(Router)
 let routes = [...base];
