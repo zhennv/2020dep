@@ -25,6 +25,7 @@ axios.interceptors.request.use(function (config) {
       break;
     case '[object Object]':
       contype = typearr['json'];
+      break;
     default:
       contype = typearr['json'];
   }
