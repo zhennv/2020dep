@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router/index'
 import store from './store/index'
-
+//样式
 import '@/assets/styles/reset.less'
 import '@/assets/styles/login.less'
 import '@/assets/styles/register.less'
@@ -10,6 +10,7 @@ import '@/assets/styles/layout.less'
 
 import axios from './providers/axios.js'
 import api from './providers/api.js'
+//组件
 import components from './components/index.js'
 Vue.prototype.$axios = axios;
 Vue.prototype.$api = api;
