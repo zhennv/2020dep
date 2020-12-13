@@ -10,15 +10,19 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(["parameters"]),
+    // ...mapGetters("base", ["parameters"]),
+    //mapGetters 的实现也和 mapState 很类似，不同的是它的 val 不能是函数，只能是一个字符串
+    ...mapGetters({
+      parameters: "base/parameters",
+    }),
   },
-  created() {
-    console.log(this.$route.params);
-    console.log(this.$store.state.parameters);
+  mounted() {
+    // console.log(this.$route.params);
+    // console.log(this.$store.state.base.parameters);
     console.log(this.parameters);
   },
   methods: {
-    ...mapMutations(["setParameters"]),
+    ...mapMutations("base", ["setParameters"]),
     handleClick() {
       this.$router.push({
         name: "home",

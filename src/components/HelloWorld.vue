@@ -16,10 +16,12 @@ export default {
     sessionStorage.setItem("parameters", "111");
   },
   computed: {
-    ...mapGetters(["parameters"]),
+    ...mapGetters({
+      parameters: (state) => state.base.parameters,
+    }),
   },
   methods: {
-    ...mapMutations(["setParameters"]),
+    ...mapMutations(["base/setParameters"]),
     nodeClick() {
       this.$axios
         .get(this.$api.login, {
@@ -28,7 +30,7 @@ export default {
           password: "z17858804744",
         })
         .then((res) => {
-          this.setParameters({ phone: 17858804744 });
+          this["base/setParameters"]({ phone: 17858804744 });
           this.$router.push({
             name: "grapher",
             // path: "/photo/grapher",

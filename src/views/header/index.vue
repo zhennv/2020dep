@@ -13,14 +13,16 @@ export default {
     return {};
   },
   computed: {
-    ...mapState(["header"]),
+    ...mapState({
+      header: (state) => state.base.header,
+    }),
   },
   methods: {
     onClickLeft() {
       this.$router.go(-1);
     },
     onClickRight() {
-      this.$store.commit("updateHeader", { rightClicked: true });
+      this.$store.commit("base/updateHeader", { rightClicked: true });
     },
   },
 };
