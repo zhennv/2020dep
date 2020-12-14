@@ -7,6 +7,7 @@
 </template>
 <script>
 export default {
+  name:"Login",
   data() {
     return {
       addBackGround: true,
@@ -21,9 +22,13 @@ export default {
 </script>
 <style lang="less" scoped>
 .pageContainer {
+  height: 100%;
   .countDown {
-    background: url(../../assets/images/bg.jpg);
+    height: 100%;
+    width: 100%;
+    background: url(~@/assets/images/bg.jpg);
     background-position: center;
+    background-size: cover;
     .jump {
       padding: 10px 20px;
     }

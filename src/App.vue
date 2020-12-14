@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       showHead: true,
-      noHeads: ["login", "home", "regsuccess"],
+      noHeads: ["Login", "home", "regsucc ess"],
     };
   },
   provide() {
